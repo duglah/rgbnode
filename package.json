@@ -1,0 +1,14 @@
+{
+  "name": "rgbnode",
+  "version": "1.0.0",
+  "description": "Client for slackbot node network to control a rgb led strip with rgb-pi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Philipp Geitz-Manstein",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.70.0"
+  }
+}
