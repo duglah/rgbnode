@@ -1,14 +1,29 @@
 {
-  "name": "rgbnode",
-  "version": "1.0.0",
-  "description": "Client for slackbot node network to control a rgb led strip with rgb-pi",
-  "main": "app.js",
+  "name": "rgb-node",
+  "version": "0.1.0",
+  "description": "Handles RGB-Pi related requests",
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/duglah/rgbnode"
+  },
+  "main": "dist/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Philipp Geitz-Manstein",
-  "license": "MIT",
+  "author": "duglah & ryupold",
+  "license": "ISC",
   "dependencies": {
-    "request": "^2.70.0"
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.12.1",
+    "node": "0.0.0",
+    "nodeclient": "git+https://github.com/duglah/nodeclient.git",
+    "request": "^2.72.0",
+    "typings": "^0.8.1"
+  },
+  "devDependencies": {
+    "tsd": "^0.6.5"
   }
 }
