@@ -70,6 +70,14 @@ var RGBNode = (function () {
     };
     RGBNode.prototype.start = function (cb) {
         this.client.start(cb);
+        this.client.register(function (error, success) {
+            if (success) {
+                console.log("successfull registered to slackbotnode");
+            }
+            else {
+                console.error("ERROR: " + error);
+            }
+        });
     };
     RGBNode.prototype.sendColorToServer = function (hashTagColorHex) {
         console.log("sending color: " + hashTagColorHex);
@@ -119,6 +127,13 @@ var RGBNode = (function () {
 }());
 exports.RGBNode = RGBNode;
 var rgbNode = new RGBNode();
-rgbNode.start();
+rgbNode.start(function (error) {
+    if (error) {
+        console.log("ERROR: " + error);
+    }
+    else {
+        console.log("start successfull");
+    }
+});
 
 //# sourceMappingURL=app.js.map

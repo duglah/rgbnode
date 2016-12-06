@@ -79,6 +79,13 @@ export class RGBNode {
 
     public start(cb?: (error: any) => void): void {
         this.client.start(cb);
+        this.client.register((error, success) => {
+            if(success){
+                console.log("successfull registered to slackbotnode");
+            }else{
+                console.error("ERROR: "+error);
+            }
+        })
     }
 
     private sendColorToServer(hashTagColorHex: string): void {
@@ -137,4 +144,10 @@ export class RGBNode {
 }
 
 let rgbNode = new RGBNode();
-rgbNode.start();
+rgbNode.start(error => {
+    if(error){
+        console.log("ERROR: "+error);
+    }else{
+        console.log("start successfull");
+    }
+});
